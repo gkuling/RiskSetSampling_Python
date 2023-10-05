@@ -16,6 +16,6 @@ dietcc = RiskSetSampling(data=diet,
                          controls=2,
                          include=['energy'],
                          match='job',
-                         silent=False)
+                         silent=True)
 
 print(dietcc.head(10))
