@@ -1,5 +1,4 @@
 from datetime import datetime
-
 import numpy as np
 import pandas as pd
 
@@ -114,9 +113,11 @@ def RiskSetSampling(
     incomplete = 0
     ties = False
     fg = list(set(grp[i] for i in range(n) if fail[i] != 0))
+    fg.sort()
     for g in fg:
         # loop over failure times
         ft = list(set(t_exit[(grp == g) & (fail != 0)]))
+        ft.sort()
         for tf in ft:
             # loop over cases
             if not silent:
